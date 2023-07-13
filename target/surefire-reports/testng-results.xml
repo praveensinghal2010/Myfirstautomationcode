@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-06-22T14:51:44 IST" name="Failed suite [Failed suite [Suite]]" finished-at="2023-06-22T14:52:54 IST" duration-ms="70048">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner.TestRunner@1bd4fdd]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2023-06-22T14:51:44 IST" name="Test(failed)(failed)" finished-at="2023-06-22T14:52:54 IST" duration-ms="70048">
+      <class name="TestRunner.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:TestRunner.TestRunner@1bd4fdd]" started-at="2023-06-22T14:51:44 IST" name="setUpClass" finished-at="2023-06-22T14:51:47 IST" duration-ms="3178" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@d499c13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner.TestRunner@1bd4fdd]" started-at="2023-06-22T14:51:47 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-22T14:52:53 IST" duration-ms="66446" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Test hello option for the page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["failrerun"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at StepDefinition.failrerunsteps.user_is_bello(failrerunsteps.java:39)
+at ✽.user is bello(file:///C:/Users/Dell/eclipse-workspace1/TESTNGPROJECT/src/test/resources/Features/failrerun.feature:13)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:TestRunner.TestRunner@1bd4fdd]" started-at="2023-06-22T14:52:53 IST" name="tearDownClass" finished-at="2023-06-22T14:52:54 IST" duration-ms="189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- TestRunner.TestRunner -->
+    </test> <!-- Test(failed)(failed) -->
+  </suite> <!-- Failed suite [Failed suite [Suite]] -->
+</testng-results>

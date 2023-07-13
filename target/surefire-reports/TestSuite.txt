@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 72.51 s <<< FAILURE! -- in TestSuite
+TestRunner.TestRunner.runScenario["Test hello option for the page", "failrerun"](1) -- Time elapsed: 66.45 s <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at StepDefinition.failrerunsteps.user_is_bello(failrerunsteps.java:39)
+	at ✽.user is bello(file:///C:/Users/Dell/eclipse-workspace1/TESTNGPROJECT/src/test/resources/Features/failrerun.feature:13)
+

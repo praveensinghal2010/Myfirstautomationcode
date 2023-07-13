@@ -1,0 +1,9 @@
+Pages\HomePage1.class
+StepDefinition\TestNG2.class
+Hooks\hooks.class
+Pages\BSEINDIA2.class
+StepDefinition\BSEINDIA.class
+Pages\HomePage2.class
+StepDefinition\TestNG.class
+StepDefinition\failrerunsteps.class
+TestRunner\TestRunner.class
