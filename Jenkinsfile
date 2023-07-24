@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         MAVEN_HOME = tool 'Maven'  // Use the configured Maven tool in Jenkins
-        DOCKER_REGISTRY = 'yourdockerhubusername'  // Replace with your Docker Hub username
+        DOCKER_REGISTRY = 'praveensinghal'  // Replace with your Docker Hub username
         DOCKER_IMAGE_NAME = 'mywebapp'  // Replace with your desired Docker image name
         DOCKER_IMAGE_TAG = 'latest'  // Replace with your desired Docker image tag/version
     }
@@ -48,15 +48,18 @@ pipeline {
 
     post {
         always {
-            // Perform any cleanup or post-build actions here if needed
+            // This block will always run, regardless of the build result
+            echo 'Post-build action: Always'
         }
 
         success {
-            // Actions to perform when the build is successful
+            // This block will run only if the build is successful
+            echo 'Post-build action: Success'
         }
 
         failure {
-            // Actions to perform when the build fails
+            // This block will run only if the build fails
+            echo 'Post-build action: Failure'
         }
     }
 }
