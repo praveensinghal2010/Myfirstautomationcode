@@ -5,12 +5,17 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.SessionId;
 
 import ConfigProperties.Configuration;
 
@@ -26,11 +31,41 @@ public class hooks {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		
+		
+		//String hubUrl = "http://localhost:4444/wd/hub";
+
+      //  ChromeOptions options = new ChromeOptions();
+       //.setCapability("platformName", "WINDOWS");
+
+        // Set desired capabilities for the Chrome browser
+     //   MutableCapabilities capabilities = new MutableCapabilities();
+    //    capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+
+      //  try {
+            // Create a new instance of the RemoteWebDriver pointing to the Selenium Grid hub
+          //   driver = new RemoteWebDriver(new URL(hubUrl), options);
+        
+        driver.get("https://the-internet.herokuapp.com/upload");
+//        SessionId sessionId = ((RemoteWebDriver) driver).getSessionId();
+//        String sessionIdString = sessionId.toString();
+//        System.out.println("Test executed on session ID: " + sessionIdString);
+     // Switch to the alert
+       // Thread.sleep(3000);
+      //  Alert alert = driver.switchTo().alert();
+
+        // Click the "OK" button
+       // alert.dismiss();
+    //    }   
+   //  catch (MalformedURLException e) {
+     //   e.printStackTrace();
+    //}
+        
 		//driver.get("https://material.angular.io/components/select/overview");
 		//driver.get("https://www.bseindia.com/");
 		//driver.get("https://nxtgenaiacademy.com/alertandpopup/");
 		//driver.get("https://www.selenium.dev/selenium/docs/api/java/index.html?overview-summary.html");
-		driver.get("https://the-internet.herokuapp.com/upload");
+		//driver.get("https://the-internet.herokuapp.com/upload");
 		//driver.get(Configuration.getProperty("url"));
 		
 		

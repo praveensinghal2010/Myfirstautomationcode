@@ -35,7 +35,7 @@ Feature: Test how to validate alert and new winow tab
     Then user should able to move the request url
     
     
-       @uploadfile  @WithBrowser
+       @uploadfile  @WithBrowser @dinesh
   Scenario Outline: Upload a file on webpage
     Given user is on the homepage url
     When user upload a file in the input box and click on upload button

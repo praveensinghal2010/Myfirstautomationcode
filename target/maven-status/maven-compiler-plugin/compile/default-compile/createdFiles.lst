@@ -1,1 +1,5 @@
-Helper\convertCucumberDataTableToJavaDataTable.class
+Helper\TableComparator.class
+Helper\WebTableCreationLogic.class
+Helper\WebTableParser.class
+Helper\CsvUtils.class
+Helper\ExcelToDatatableHelper.class
