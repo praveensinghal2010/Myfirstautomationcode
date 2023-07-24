@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        MAVEN_HOME = tool 'Maven'  // Use the configured Maven tool in Jenkins
+        MAVEN_HOME = tool 'C:/apache-maven-3.9.2'  // Use the configured Maven tool in Jenkins
         DOCKER_REGISTRY = 'praveensinghal'  // Replace with your Docker Hub username
         DOCKER_IMAGE_NAME = 'mywebapp'  // Replace with your desired Docker image name
         DOCKER_IMAGE_TAG = 'latest'  // Replace with your desired Docker image tag/version
