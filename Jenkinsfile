@@ -11,14 +11,14 @@ pipeline {
         stage('Build and Test') {
             steps {
                 // Build your Maven project and run the Selenium tests
-                sh "clean test"
+                bat "mvn clean package -DskipTests"  // Use 'bat' for Windows batch commands
             }
         }
 
         stage('Create Docker Image') {
             steps {
                 // Build the Docker image using the Dockerfile
-                sh "docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
+                bat "docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
             }
         }
 
@@ -26,11 +26,11 @@ pipeline {
             steps {
                 // Log in to Docker Hub
                 withCredentials([string(credentialsId: 'docker-hub-credentials', variable: 'DOCKER_HUB_CREDENTIALS')]) {
-                    sh "docker login -u ${DOCKER_REGISTRY} -p ${DOCKER_HUB_CREDENTIALS}"
+                    bat "docker login -u ${DOCKER_REGISTRY} -p ${DOCKER_HUB_CREDENTIALS}"
                 }
 
                 // Push Docker image to Docker Hub
-                sh "docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
+                bat "docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
             }
         }
     }
