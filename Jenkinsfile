@@ -8,16 +8,7 @@ pipeline {
         DOCKER_IMAGE_TAG = 'latest'  // Replace with your desired Docker image tag/version
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                // Checkout your Maven project from version control system (e.g., Git)
-                // Modify the URL and credentials accordingly
-                checkout([$class: 'GitSCM', 
-                          branches: [[name: '*/main']],
-                          userRemoteConfigs: [[url: 'https://github.com/yourusername/your-maven-project.git']]])
-            }
-        }
+    
 
         stage('Build and Test') {
             steps {
