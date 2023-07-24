@@ -2,14 +2,12 @@ pipeline {
     agent any
 
     environment {
-     
         DOCKER_REGISTRY = 'praveensinghal'  // Replace with your Docker Hub username
         DOCKER_IMAGE_NAME = 'mywebapp'  // Replace with your desired Docker image name
         DOCKER_IMAGE_TAG = 'latest'  // Replace with your desired Docker image tag/version
     }
 
-    
-
+    stages {
         stage('Build and Test') {
             steps {
                 // Build your Maven project and run the Selenium tests
