@@ -11,7 +11,7 @@ pipeline {
         stage('Build and Test') {
             steps {
                 // Build your Maven project and run the Selenium tests
-                bat "mvn clean package -DskipTests"  // Use 'bat' for Windows batch commands
+                bat "clean package -DskipTests"  // Use 'bat' for Windows batch commands
             }
         }
 
