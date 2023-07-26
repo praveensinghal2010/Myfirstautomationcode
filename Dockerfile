@@ -9,8 +9,8 @@ ADD  target/container-test-tests.jar container-test-tests.jar
 ADD  target/libs libs
 
 # Add the suite xmls
-ADD suite/order-module.xml order-module.xml
-ADD suite/search-module.xml search-module.xml
+ADD testng.xml testng.xml
+ADD pom.xml pom.xml
 
 # Command line to execute the test
 # Expects below ennvironment variables
