@@ -16,7 +16,7 @@
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.8.0</version>
-    <scope>test</scope>
+  
 </dependency>
 <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 <dependency>
@@ -76,7 +76,7 @@
     <groupId>io.rest-assured</groupId>
     <artifactId>rest-assured</artifactId>
     <version>5.3.1</version>
-    <scope>test</scope>
+   
 </dependency>
 <!-- https://mvnrepository.com/artifact/org.json/json -->
 <dependency>
@@ -95,6 +95,8 @@
   </dependencies>
   
   <build>
+	  <finalName>container-test</finalName>
+	    <sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<!-- ... other plugins ... -->
 			<plugin>
@@ -110,6 +112,47 @@
         </plugin>
 			
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								${project.build.directory}/libs
+							</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.3.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>libs/</classpathPrefix>
+						</manifest>
+					</archive>
+				</configuration>
+				</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.11.0</version>
@@ -119,6 +162,7 @@
                 <target>17</target>
                 
           </configuration>
+          
         </plugin>
 			
 			<!-- ... other plugins ... -->
