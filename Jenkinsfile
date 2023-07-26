@@ -18,7 +18,7 @@ pipeline {
         stage('Create Docker Image') {
             steps {
                 // Build the Docker image using the Dockerfile
-                bat "docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
+                bat "docker build -t praveensinghal/mywebapp:latest C:\home\temp\workspace\docker\pipelne"
             }
         }
 
